@@ -10,33 +10,34 @@ function agregarProducto(nombre, precio, cantidad) {
         precio: precio,
         cantidad: cantidad
     };
-
+    
     // Agregar el objeto al array
     productos.push(producto);
 
-    console.log("☕ Producto agregado correctamente.");
+    console.log("Producto agregado correctamente.");
 }
 
 // MÉTODO PARA LISTAR
 function listarProductos() {
-
+   
     console.log("\n===== CAFETERÍA - PRODUCTOS =====");
-
+   
     if (productos.length === 0) {
         console.log("No hay productos registrados.");
         return;
     }
-
+   
     productos.forEach((producto, index) => {
-
+   
         console.log(
             `${index + 1}. ${producto.nombre} | Precio: $${producto.precio} | Cantidad: ${producto.cantidad}`
         );
-
+    
     });
 }
 
 // MÉTODO PARA EDITAR
+
 function editarProducto(indice, nombre, precio, cantidad) {
 
     if (indice >= 0 && indice < productos.length) {
@@ -54,14 +55,13 @@ function editarProducto(indice, nombre, precio, cantidad) {
 }
 
 // MÉTODO PARA ELIMINAR
+
 function eliminarProducto(indice) {
 
     if (indice >= 0 && indice < productos.length) {
 
         productos.splice(indice, 1);
-
-        console.log("🗑️ Producto eliminado correctamente.");
-
+        console.log(" Producto eliminado correctamente.");
     } else {
 
         console.log("Producto no encontrado.");
@@ -69,7 +69,6 @@ function eliminarProducto(indice) {
 }
 
 
-// ====================================
 //        PRODUCTOS DE LA CAFETERÍA
 // ====================================
 
@@ -80,10 +79,8 @@ agregarProducto("Frappé de Chocolate", 65, 10);
 agregarProducto("Pastel de Chocolate", 50, 8);
 agregarProducto("Galletas", 25, 30);
 
-
 // LISTAR PRODUCTOS
 listarProductos();
-
 
 // EDITAR PRODUCTO
 editarProducto(1, "Cappuccino Vainilla", 60, 18);
