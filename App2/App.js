@@ -4,18 +4,22 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image} from 'react-native';
 import {Saludo} from './components/Saludo';
 import {Saludo2} from './components/Saludo2';
-import Perfil from './Perfil';
+import {Perfil} from './components/Perfil';
+import { unstable_VirtualColumn } from 'react-native';
 
 
 /* 2. ZONA DE MAIN (componentes ó Screens*/
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hola Mundo React Native!</Text>
-      <Image source={require('./assets/wave.png')} />
-      <Saludo></Saludo> 
-      <Saludo2></Saludo2>
-      <Perfil></Perfil>
+      <Perfil nombre="Luz Citlali Resendiz" carrera="ITIID"
+      materia="Desarrollo de Aplicaciones Movil" cuatrimestre="Cuarto" style={styles.tarjeta1}/>
+
+      <Perfil nombre="Juan Carlos Lopez" carrera="Ingenieria en Sistemas Computacionales"
+      materia="Programación Web" cuatrimestre="Segundo" style={styles.tarjeta2} />
+      
+      <Perfil nombre="Berenice Martinez" carrera="Comercio Internacional"
+      materia="Contaduria" cuatrimestre="Primero" style={styles.tarjeta3}/>
       <StatusBar style="auto" />
     </View>
   );
@@ -26,7 +30,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
   },
+  tarjeta1:{backgroundColor:'pink'},
+  tarjeta2:{backgroundColor:'orange'},
+  tarjeta3:{backgroundColor:'green'},
 });
