@@ -1,24 +1,25 @@
-
-/* 1. ZONA IMPORTACIONES */
-import { StyleSheet, Text, View, Image} from 'react-native';
-import MenuScreen from './screens/MenuScreen';
-
-
-
-/* 2. ZONA DE MAIN (componentes ó Screens*/
-export default function App() {
+/* 1.ZONA DE IMPORTACIONES */
+import { StyleSheet, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import  MenuScreen  from './screens/MenuScreen';
+/* 2.ZONA DEL MAIN(COMPONENTES, SCREENS) / EJECUCION*/
+export default function App(){
   return (
-    <MenuScreen></MenuScreen>
+    <SafeAreaProvider>
+    <View style={styles.container}>
+    <MenuScreen/>
+    </View>
+    </SafeAreaProvider>
   );
 }
-
-/* 3. ZONA DE ESTILOS */
+/* 3.ZONA DE LA ESTETICA */
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
+ container: {
+  flex: 1,
+  backgroundColor: '#fff',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center'
+},
+  
 });
