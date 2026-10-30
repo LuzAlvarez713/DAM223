@@ -21,7 +21,7 @@ export default function MenuScreen() {
       return <SafeScreen />;
 
     case 'press':
-      return <PressableScreen />;
+      return < PressableScreen />;
 
     case 'tarjetas':
       return <TarjetasScreen />;
