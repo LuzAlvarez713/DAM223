@@ -38,7 +38,7 @@ export default function MenuScreen() {
     case 'ModalBottomScreen':
       return <ModalBottomScreen />;
 
-    case 'ActivityIndicatorScreen':
+    case 'activity':
       return <ActivityIndicatorScreen />;
 
     default:
@@ -83,7 +83,7 @@ export default function MenuScreen() {
 
           <Button
             title="PRACTICA ACTIVITYINDICATOR"
-            onPress={() => setScreen('ActivityIndicatorScreen')}
+            onPress={() => setScreen('activity')}
           />
         </View>
       );
